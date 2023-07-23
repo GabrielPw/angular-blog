@@ -1,0 +1,41 @@
+.app-header{
+
+    display: block;
+    padding: 10px;
+    background: #333333;
+    height: 90px;
+
+    .brand-logo{
+
+        font-size: 23px;
+        
+    }
+
+
+    align-items: center;
+
+
+    .btn{
+
+        background: rgb(91, 168, 117);
+    }
+
+    .btn.btn-login{
+        background-color: white;
+        border: 2px solid rgb(60, 187, 77);
+        color: rgb(255, 141, 255);
+    }
+
+    
+}
+
+nav.nav-center ul {
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
+}

@@ -1,0 +1,44 @@
+<div class="row post-card-container" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Botão flutuante com ícone de "+" -->
+    <div class="title-container">
+
+        <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large btn-small waves-effect waves-light red"  (click)="toggleEditor()">
+                        <span class="icon-wrapper"><i class="material-icons">add</i></span>
+                    </a>
+                </div>
+        <div class="new-post-area" *ngIf="showEditor">
+            <span><b>Novo post.</b></span>
+            <!-- Botão flutuante com ícone de "+" e estilo personalizado -->
+            <div class="floating-button">
+                
+                <input type="text" placeholder="Titulo">
+                <editor *ngIf="showEditor" apiKey={{key_editor}} [init]="{ plugins: 'lists link image table code help wordcount' }"></editor>
+                <a class="waves-effect waves-light btn">Save Post</a>
+            </div>
+
+        </div>
+        
+        <h1>Postagens Recentes</h1>
+    </div>
+    
+    <div>
+        <div class="col m3"  *ngFor="let post of postagens; index as i;">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://materializecss.com/images/sample-1.jpg">
+                    <span class="card-title">{{ post.getTitulo() }}</span>
+                </div>
+                <div class="card-content">
+                    <p>{{post.getConteudo()}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">Ler mais...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
